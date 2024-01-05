@@ -1,6 +1,6 @@
 import { Link } from '../components/Link'
 
-export function SearchPage({ routesParams }) {
+export default function SearchPage({ routesParams }) {
   return (
     <>
       <h1>Hemos buscado {routesParams.query}</h1>
