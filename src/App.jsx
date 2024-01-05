@@ -1,29 +1,25 @@
-import { AboutPage } from "./AboutPage";
-import { HomePage } from "./HomePage";
-import { Router } from "./Router";
-import { SearchPage } from "./SearchPage";
+import { AboutPage } from './pages/AboutPage'
+import { HomePage } from './pages/HomePage'
+import { Router } from './components/Router'
+import { Route } from './components/Route'
+import { SearchPage } from './pages/SearchPage'
 
 const appRoutes = [
   {
-    path: "/",
-    Component: HomePage,
-  },
-  {
-    path: "/about",
-    Component: AboutPage,
-  },
-  {
-    path: "/search/:query",
+    path: '/search/:query',
     Component: SearchPage,
-  },
-];
+  }
+]
 
 function App() {
   return (
     <main>
-      <Router routes={appRoutes} />
+      <Router routes={appRoutes} >
+        <Route path='/about' Component={AboutPage} />
+        <Route path='/' Component={HomePage} />
+      </Router>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App
